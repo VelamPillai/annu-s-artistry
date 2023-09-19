@@ -1,24 +1,26 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import redbtn from "../assets/redbtn.jpeg";
+import bluebtn from "../assets/bluebtn.jpeg";
+import yellowbtn from "../assets/yellowbtn.jpeg"; 
+import gallerygallery from "../assets/gallerygallery.jpeg";
+import homegallery from "../assets/homegallery.jpeg";
+import contactgallery from "../assets/contactgallery.jpeg";
 
 
 
 
 
-const SideNav = () => {
+
+const SideNav = (props) => {
+  const { page } = props;
   const [nav, setNav] = useState(false);
     const handleNav = () => {
       setNav(!nav);
       
     };
-  const addBorder = (e) => {
-    e.target.style.border = "2px solid cyan";
-    e.target.firstChild.style.visibility = "visible";
-    }
-
-  const removeBorder = (e) => {
-    e.target.style.border = "none";
-  };
+  
   return (
     <div>
       {/* mobile Menu */}
@@ -72,40 +74,37 @@ const SideNav = () => {
         ""
       )} */}
       {/* Menu for other devices */}
-      <div className="hidden md:flex  fixed top-5 right-4 z-10">
+      <div className="hidden md:flex  fixed top-0 right-5 z-10">
         <div className="flex ">
-          <button
-            id="image-button"
-            className="w-32 h-12 flex items-center justify-center bg-image-button bg-cover bg-center text-white hover:bg-opacity-80 transition duration-300 ease-in-out"
-          >
-            <img src={redbtn} alt="redbtn" className="object-center" />
+          <NavLink to="/">
+            <button id="image-button" className="w-32 h-12 m-2 ">
+              <img
+                src={page==="home" ? redbtn : homegallery }
+                alt="redbtn"
+                className="object-center hover:translate-x-0.5	hover:scale-125"
+              />
+            </button>
+          </NavLink>
+          <NavLink to="/gallery">
+            
+          <button id="image-button" className="w-32 h-12 m-2  bg-green-300">
+            <img
+              src={page=== "home" ? yellowbtn : gallerygallery}
+              alt="yellowbtn"
+              className="object-center hover:translate-x-0.5	hover:scale-125"
+            />
           </button>
+          </NavLink>
+          <NavLink to="/contact">
 
-          {/* <a
-            href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110"
-            onMouseEnter={addBorder}
-            onMouseLeave={removeBorder}
-          >
-            <p className=" ">Home</p>
-          </a> */}
-          <a
-            href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110"
-            onMouseEnter={addBorder}
-            onMouseLeave={removeBorder}
-          >
-            <p className=" ">Gallery</p>
-          </a>
-
-          <a
-            href="#contact"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110"
-            onMouseEnter={addBorder}
-            onMouseLeave={removeBorder}
-          >
-            <p className=" ">contact</p>
-          </a>
+          <button id="image-button" className="w-32 h-12 m-2  ">
+            <img
+              src={ page=== "home"? bluebtn : contactgallery}
+              alt="redbtn"
+              className="object-center hover:translate-x-0.5	hover:scale-125"
+            />
+          </button>
+          </NavLink>
         </div>
       </div>
     </div>

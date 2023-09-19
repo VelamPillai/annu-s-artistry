@@ -1,7 +1,7 @@
 import React from "react";
 import homeBG from "../assets/homeBG.jpeg";
 // import { FaGithubSquare, FaLinkedin, FaXingSquare } from "react-icons/fa";
-import SideNav from './SideNav';
+import SideNav from "../components/SideNav";
 
 const Home = () => {
   return (
@@ -11,10 +11,10 @@ const Home = () => {
         alt="homeBG"
         className="w-full h-screen object-center  scale-x-[1]"
       />
-       <div className="w-full h-screen absolute top-0 left-0 ">
-              <SideNav /> 
-          
-          {/* <div className="flex justify-between pt-6 max-w-[100px] w-full  ">
+      <div className="w-full h-screen absolute top-0 left-0 ">
+        <SideNav page={ "home"} />
+
+        {/* <div className="flex justify-between pt-6 max-w-[100px] w-full  ">
             <FaLinkedin
               className="cursor-pointer"
               size={20}
@@ -29,7 +29,7 @@ const Home = () => {
               onClick={() => window.open("https://github.com/VelamPillai")}
             />
           </div> */}
-      </div> 
+      </div>
     </div>
   );
 };
