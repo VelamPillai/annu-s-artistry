@@ -1,10 +1,10 @@
-import SideNav from "../components/SideNav";
+import Nav from "../components/Nav";
 
 function Contact() {
   return (
     <div>
       Contact
-      <SideNav page={"gallery"} />
+      <Nav page={"gallery"} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import homeBG from "../assets/homeBG.jpeg";
 // import { FaGithubSquare, FaLinkedin, FaXingSquare } from "react-icons/fa";
-import SideNav from "../components/SideNav";
+import Nav from "../components/Nav";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
         className="w-full h-screen object-center  scale-x-[1]"
       />
       <div className="w-full h-screen absolute top-0 left-0 ">
-        <SideNav page={ "home"} />
+        <Nav page={"home"} />
 
         {/* <div className="flex justify-between pt-6 max-w-[100px] w-full  ">
             <FaLinkedin

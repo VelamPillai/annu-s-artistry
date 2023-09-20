@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import redbtn from "../assets/redbtn.jpeg";
-import bluebtn from "../assets/bluebtn.jpeg";
-import yellowbtn from "../assets/yellowbtn.jpeg"; 
-import gallerygallery from "../assets/gallerygallery.jpeg";
-import homegallery from "../assets/homegallery.jpeg";
-import contactgallery from "../assets/contactgallery.jpeg";
-
+import navButtonList from "../assets/navBtnList.js";
 
 
 
 
 
 const SideNav = (props) => {
+  const [redbtn, bluebtn, yellowbtn, gallerygallery, contactgallery, homegallery
+  ] = navButtonList;
   const { page } = props;
   const [nav, setNav] = useState(false);
     const handleNav = () => {
