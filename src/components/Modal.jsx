@@ -10,7 +10,7 @@ function Modal( props ) {
     
      <div
         style={{display: imgVisibility}}
-      className="w-[1000px] h-[600px] fixed  top-[15%] left-[15%] bg-[#ded8d1e5] rounded-lg"
+      className="w-[300px] h-[500px] md:w-[1000px] md:h-[600px] fixed top-[30%] left-[15%] md:top-[15%] md:left-[15%] bg-[#ded8d1e5] rounded-lg"
       
       >
         <button

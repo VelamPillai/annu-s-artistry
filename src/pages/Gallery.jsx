@@ -17,12 +17,12 @@ function Gallery() {
   return (
     <div id="gallery " className="bg-[#F8B971]  w-full h-full " >
       {/* nav  */}
-      <div className="bg-[#F8B971] fixed w-full h-[150px] z-50">
+      <div className="bg-[#F8B971] fixed w-full h-[150px] z-50 ">
         <Nav page={"gallery"} />
       </div>
       {/*display pictures list  */}
       <div  className="max-w-[1200px] m-auto md:pl-20 p-4 py-16 relative h-[100%] " style={{opacity : overlay.opacity,zIndex:overlay.zindex }}  >
-        <div className="py-10 grid sm:grid-cols-4 gap-4 mt-[3rem]  ">
+        <div className="py-10 grid  md:grid-cols-4 gap-4 mt-[3rem] justify-center items-center ">
           {galleryImagesList.map((item, idx) => {
             return (
               <img

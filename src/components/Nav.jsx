@@ -69,6 +69,40 @@ const SideNav = (props) => {
       ) : (
         ""
       )} */}
+      {/* Menu for mobile */}
+      <div className=" flex md:hidden  justify-center items-center z-10 m-[2rem]">
+        <div className="flex  ">
+          <NavLink to="/">
+            <button id="image-button" className="w-20 h-4 m-2 rounded-xl ">
+              <img
+                src={page==="home" ? redbtn : homegallery }
+                alt="redbtn"
+                className="object-center hover:translate-x-0.5	hover:scale-125"
+              />
+            </button>
+          </NavLink>
+          <NavLink to="/gallery">
+            
+          <button id="image-button" className="w-20 h-4 m-2 rounded-xl ">
+            <img
+              src={page=== "home" ? yellowbtn : gallerygallery}
+              alt="yellowbtn"
+              className="object-center hover:translate-x-0.5	hover:scale-125"
+            />
+          </button>
+          </NavLink>
+          <NavLink to="/contact">
+
+          <button id="image-button" className="w-20 h-4 m-2 rounded-xl  ">
+            <img
+              src={ page=== "home"? bluebtn : contactgallery}
+              alt="redbtn"
+              className="object-center hover:translate-x-0.5	hover:scale-125"
+            />
+          </button>
+          </NavLink>
+        </div>
+      </div>
       {/* Menu for other devices */}
       <div className="hidden md:flex  fixed top-0 right-5 z-10">
         <div className="flex ">
