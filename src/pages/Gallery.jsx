@@ -6,19 +6,22 @@ import Modal from "../components/Modal.jsx";
 
 function Gallery() {
   const [imgVisibility, setImgVisibility] = useState("none");
+  const [overlay, setOverlay] = useState({ opacity: 1.0,zindex:40 });
   const [imgLink, setImgLink] = useState(" ");
   const openImageHandler = (e) => {
    setImgVisibility((imgVisibility) => imgVisibility === "none" ? "flex" : "none");
     setImgLink(e.target.src);
+    setOverlay({ opacity: 0.2,zindex:0 });
     }
 
   return (
-    <div id="gallery " className="bg-[#F8B971]  w-full h-full">
-      <div className="bg-[#F8B971] fixed w-full h-[150px]">
+    <div id="gallery " className="bg-[#F8B971]  w-full h-full " >
+      {/* nav  */}
+      <div className="bg-[#F8B971] fixed w-full h-[150px] z-50">
         <Nav page={"gallery"} />
       </div>
-
-      <div className="max-w-[1200px] m-auto md:pl-20 p-4 py-16 relative h-[100%]" >
+      {/*display pictures list  */}
+      <div  className="max-w-[1200px] m-auto md:pl-20 p-4 py-16 relative h-[100%] " style={{opacity : overlay.opacity,zIndex:overlay.zindex }}  >
         <div className="py-10 grid sm:grid-cols-4 gap-4 mt-[3rem]  ">
           {galleryImagesList.map((item, idx) => {
             return (
@@ -33,8 +36,8 @@ function Gallery() {
           })}
         </div>
       </div>
-      
-      <Modal openImageHandler={ openImageHandler} imgLink = {imgLink} imgVisibility={imgVisibility} />
+      {/* display single picture */}
+      <Modal setImgVisibility={setImgVisibility} imgLink={imgLink} imgVisibility={imgVisibility} setOverlay={ setOverlay }  />
     </div>
   );
 }
